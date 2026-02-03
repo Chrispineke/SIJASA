@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CHRISCASSY // AETHER-OS UNIFIED</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="watermark" id="global-watermark">CHRISCASSY</div>
+    <div id="player" style="position: absolute; top: -9999px;"></div>
+
+    <div id="login-screen" class="screen-state">
+        <div class="login-card">
+            <div class="glitch-title" data-text="SECURE_AUTH">SECURE_AUTH</div>
+            <input type="text" id="op-id" placeholder="ENTER OPERATOR_ID..." />
+            <button class="action-btn" onclick="initializeSystem()">INITIALIZE_LINK</button>
+            <p id="boot-log" class="status-text"></p>
+        </div>
+    </div>
+
+    <main id="dashboard" class="screen-state hidden">
+        <header class="hud-header">
+            <div class="status-node">NODE: ACTIVE</div>
+            <div class="glitch-title-small">AETHER_OS_v4.0</div>
+            <div id="clock">00:00:00</div>
+        </header>
+
+        <div class="interface-grid">
+            <aside class="sidebar">
+                <header>GLOBAL_CHARTS</header>
+                <div id="chart-container" class="console"></div>
+                <div class="now-playing-container">
+                    <div class="track-display"><span id="current-track">IDLE...</span></div>
+                    <canvas id="visualizer"></canvas>
+                </div>
+            </aside>
+
+            <section class="viewport">
+                <canvas id="neural-canvas"></canvas>
+                <div class="coord-overlay">LAT: <span id="lat">0</span> | LNG: <span id="lng">0</span></div>
+            </section>
+
+            <aside class="sidebar">
+                <header>SYSTEM_TERMINAL</header>
+                <div id="term-logs" class="console"></div>
+                <input type="text" id="term-input" placeholder="CMD..." onkeypress="handleCommand(event)"/>
+            </aside>
+        </div>
+    </main>
+
+    <div id="valentine-screen" class="screen-state hidden">
+        <div class="gen-box">
+            <header>
+                <div class="glitch-title" data-text="LOVE_ALGORITHM">LOVE_ALGORITHM</div>
+                <button class="close-btn" onclick="switchState('dashboard')">EXIT</button>
+            </header>
+            <input type="text" id="target-name" placeholder="TARGET_NAME..." />
+            <button class="action-btn pink" onclick="generateValentine()">GENERATE_PACKET</button>
+            <div id="output-module" class="hidden">
+                <div id="capture-area" class="card-frame"><div id="message-content"></div></div>
+                <div class="action-bar">
+                    <button class="mini-btn" onclick="downloadPacket()">XML</button>
+                    <button class="mini-btn green" onclick="shareToWhatsApp()">WHATSAPP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>

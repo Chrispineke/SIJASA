@@ -1,0 +1,13 @@
+:root { --primary: #00f2ff; --bg: #000510; --pink: #ff2d75; }
+body { background: var(--bg); color: var(--primary); font-family: 'Courier New', monospace; margin: 0; overflow: hidden; }
+.hidden { display: none !important; }
+.screen-state { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.interface-grid { display: grid; grid-template-columns: 280px 1fr 280px; width: 100vw; height: 90vh; padding: 10px; gap: 10px; box-sizing: border-box; }
+.console { background: rgba(0,0,0,0.6); border: 1px solid var(--primary); height: 300px; overflow-y: auto; padding: 10px; font-size: 11px; }
+.chart-entry { padding: 10px; border-bottom: 1px solid rgba(0,242,255,0.2); cursor: pointer; transition: 0.2s; }
+.chart-entry:hover { background: var(--primary); color: #000; }
+.viewport { border: 1px solid var(--primary); position: relative; }
+canvas { width: 100%; height: 100%; }
+.watermark { position: fixed; bottom: 10px; right: 20px; font-size: 5rem; opacity: 0.05; font-weight: bold; pointer-events: none; }
+.action-btn { background: var(--primary); border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+.pink { background: var(--pink); color: white; }
